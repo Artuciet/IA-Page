@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Barra de seleccion de opciones basicas -->
+    <!-- Barra de selección de opciones básicas -->
     <div class="row m-2 position-absolute top-0 end-0" style="z-index: 1050;">
         <div class="col-auto">
             <div class="dropdown">
@@ -39,14 +39,15 @@
         <h1 class="mt-5" id="main-title">Testing Bootstrap with this page.</h1>
         <p id="main-desc">This is a simple AI page with bootstrap.</p>
 
+        <!-- Botones de colapsables 1 y 2 -->
         <div class="d-inline-flex gap-1 mb-3">
             <a class="btn btn-primary" id="btn-merienda" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Merienda</a>
             <button class="btn btn-primary" id="btn-elemento2" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Elemento 2</button>
-            <button class="btn btn-primary" id="btn-ambos" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Ambos</button>
+            <button class="btn btn-primary" id="btn-ambos1" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse-1" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Ambos</button>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <div class="collapse multi-collapse show" id="multiCollapseExample1">
+                <div class="collapse multi-collapse-1 show" id="multiCollapseExample1">
                     <div class="card card-body" style="max-height: 300px; overflow-y: auto;">
                         <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#abriendoDato" id="main-btn">Click Me!</button>
                         <!-- Modal para boton de click me! -->
@@ -75,7 +76,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="collapse multi-collapse show" id="multiCollapseExample2">
+                <div class="collapse multi-collapse-1 show" id="multiCollapseExample2">
                     <div class="card card-body" style="max-height: 300px; overflow-y: auto;">
                         <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#miModalLargo" id="btn-open-long-modal">Abrir Modal con Contenido Largo</button>
                         <!-- Scrollable modal -->
@@ -113,8 +114,85 @@
                 </div>
             </div>
         </div>
+
+        <!-- Botones de colapsables 3 y 4 -->
+        <div class="d-inline-flex gap-1 mb-3">
+            <a class="btn btn-primary" id="btn-merienda3" data-bs-toggle="collapse" href="#multiCollapseExample3" role="button" aria-expanded="false" aria-controls="multiCollapseExample3">Merienda 3</a>
+            <button class="btn btn-primary" id="btn-elemento3" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample4" aria-expanded="false" aria-controls="multiCollapseExample4">Elemento 2</button>
+            <button class="btn btn-primary" id="btn-ambos2" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse-2" aria-expanded="false" aria-controls="multiCollapseExample3 multiCollapseExample4">Ambos</button>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="collapse multi-collapse-2 show" id="multiCollapseExample3">
+                    <div class="card card-body" style="max-height: 300px; overflow-y: auto;">
+                        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#abriendoDato3" id="main-btn-3">Click Me!</button>
+                        <!-- Modal para boton de click me! -->
+                        <div class="modal fade" id="abriendoDato3" tabindex="-1" aria-labelledby="abriendoDatoLabel3" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="abriendoDatoLabel3">Preparemos este plato!</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body" style="max-height: 400px; overflow-y: auto;">
+                                        <img src="images/yogurt-banana.jpg" class="img-fluid mb-3" alt="Greek Yogurt with Banana">
+                                        <p id="modal-click-msg-3">¡Has hecho clic en el botón!</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn-close-modal3">Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisi nec erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                        <p>Más contenido para hacer scroll...</p>
+                        <p>Más contenido para hacer scroll...</p>
+                        <p>Más contenido para hacer scroll...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="collapse multi-collapse-2 show" id="multiCollapseExample4">
+                    <div class="card card-body" style="max-height: 300px; overflow-y: auto;">
+                        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#miModalLargo4" id="btn-open-long-modal-4">Abrir Modal con Contenido Largo</button>
+                        <!-- Scrollable modal -->
+                        <div class="modal fade" id="miModalLargo4" tabindex="-1" aria-labelledby="miModalLargoLabel4" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="miModalLargoLabel4">Título del Modal</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Contenido del modal...</p>
+                                        <p>Contenido del modal...</p>
+                                        <p>Contenido del modal...</p>
+                                        <p>Contenido del modal...</p>
+                                        <p>Contenido del modal...</p>
+                                        <p>Contenido del modal...</p>
+                                        <p>Contenido del modal...</p>
+                                        <p>Contenido del modal...</p>
+                                        <p>Contenido del modal...</p>
+                                        <p>Contenido del modal...</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn-close-modal4">Cerrar</button>
+                                        <button type="button" class="btn btn-primary" id="btn-save-changes-4">Guardar cambios</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Texto de ejemplo para el segundo collapse...</p>
+                        <p>Más contenido para hacer scroll...</p>
+                        <p>Más contenido para hacer scroll...</p>
+                        <p>Más contenido para hacer scroll...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- JS de traducción y Bootstrap -->
     <script>
         // Traducciones completas
         const translations = {
@@ -184,14 +262,21 @@
             document.getElementById('main-btn').textContent = translations[lang].btn;
             document.getElementById('btn-merienda').textContent = translations[lang].merienda;
             document.getElementById('btn-elemento2').textContent = translations[lang].elemento2;
-            document.getElementById('btn-ambos').textContent = translations[lang].ambos;
+            document.getElementById('btn-ambos1').textContent = translations[lang].ambos;
+            document.getElementById('btn-merienda3').textContent = translations[lang].merienda;
+            document.getElementById('btn-elemento3').textContent = translations[lang].elemento2;
+            document.getElementById('btn-ambos2').textContent = translations[lang].ambos;
             document.getElementById('abriendoDatoLabel').textContent = translations[lang].modal1title;
             document.getElementById('modal-click-msg').textContent = translations[lang].modal1msg;
             document.getElementById('btn-close-modal1').textContent = translations[lang].close;
             document.getElementById('btn-open-long-modal').textContent = translations[lang].openLongModal;
+            document.getElementById('btn-open-long-modal-4').textContent = translations[lang].openLongModal;
             document.getElementById('miModalLargoLabel').textContent = translations[lang].modal2title;
+            document.getElementById('miModalLargoLabel4').textContent = translations[lang].modal2title;
             document.getElementById('btn-close-modal2').textContent = translations[lang].close;
+            document.getElementById('btn-close-modal4').textContent = translations[lang].close;
             document.getElementById('btn-save-changes').textContent = translations[lang].save;
+            document.getElementById('btn-save-changes-4').textContent = translations[lang].save;
             // Cambiar contenido del modal largo
             let modalBody = document.querySelector("#miModalLargo .modal-body");
             if (modalBody) {
@@ -202,6 +287,18 @@
                     modalBody.appendChild(p);
                 }
             }
+            let modalBody4 = document.querySelector("#miModalLargo4 .modal-body");
+            if (modalBody4) {
+                modalBody4.innerHTML = "";
+                for (let i = 0; i < 10; i++) {
+                    let p = document.createElement("p");
+                    p.textContent = translations[lang].modal2content;
+                    modalBody4.appendChild(p);
+                }
+            }
+            document.getElementById('abriendoDatoLabel3').textContent = translations[lang].modal1title;
+            document.getElementById('modal-click-msg-3').textContent = translations[lang].modal1msg;
+            document.getElementById('btn-close-modal3').textContent = translations[lang].close;
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
