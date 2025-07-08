@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Barra de seleccion de opciones basicas -->
+    <div style="grid-template-columns: 1fr 1.5fr;" class="d-grid gap-0 row-gap-2 dropdown m-2 position-absolute top-0 end-0">
+        <!-- Dropdown para los lenguajes -->
+        <div>
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonLanguages" data-bs-toggle="dropdown" aria-expanded="false">
+                <span id="btn-language">Languages</span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonLanguages">
+                <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">English</a></li>
+                <li><a class="dropdown-item" href="#" onclick="setLanguage('es')">Español</a></li>
+                <li><a class="dropdown-item" href="#" onclick="setLanguage('fr')">Français</a></li>
+            </ul>
+        </div>
+        <!-- Dropdown para los temas -->
+        <div>
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonThemes" data-bs-toggle="dropdown" aria-expanded="false">
+                <span id="btn-theme">Themes mode</span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonThemes">
+                <li><a class="dropdown-item" href="#" onclick="setTheme('light')">Light</a></li>
+                <li><a class="dropdown-item" href="#" onclick="setTheme('dark')">Dark</a></li>
+                <li><a class="dropdown-item" href="#" onclick="setTheme('auto')">Auto</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 class="mt-5" id="main-title">Testing Bootstrap with this page.</h1>
+        <p id="main-desc">This is a simple AI page with bootstrap.</p>
+        <button type="button" class="btn btn-primary" id="main-btn">Click Me!</button>
+    </div>
+
+    <script>
+        // Traducciones
+        const translations = {
+            en: {
+                language: "Languages",
+                theme: "Themes mode",
+                title: "Testing Bootstrap with this page.",
+                desc: "This is a simple AI page with bootstrap.",
+                btn: "Click Me!"
+            },
+            es: {
+                language: "Idiomas",
+                theme: "Modo de tema",
+                title: "Probando Bootstrap con esta página.",
+                desc: "Esta es una página simple de IA con bootstrap.",
+                btn: "¡Haz clic!"
+            },
+            fr: {
+                language: "Langues",
+                theme: "Mode thème",
+                title: "Tester Bootstrap avec cette page.",
+                desc: "Ceci est une page IA simple avec bootstrap.",
+                btn: "Cliquez-moi!"
+            }
+        };
+
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-bs-theme', theme);
+        }
+
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.getElementById('btn-language').textContent = translations[lang].language;
+            document.getElementById('btn-theme').textContent = translations[lang].theme;
+            document.getElementById('main-title').textContent = translations[lang].title;
+            document.getElementById('main-desc').textContent = translations[lang].desc;
+            document.getElementById('main-btn').textContent = translations[lang].btn;
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
