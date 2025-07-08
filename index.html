@@ -8,60 +8,166 @@
 </head>
 <body>
     <!-- Barra de seleccion de opciones basicas -->
-    <div style="grid-template-columns: 1fr 1.5fr;" class="d-grid gap-0 row-gap-2 dropdown m-2 position-absolute top-0 end-0">
-        <!-- Dropdown para los lenguajes -->
-        <div>
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonLanguages" data-bs-toggle="dropdown" aria-expanded="false">
-                <span id="btn-language">Languages</span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonLanguages">
-                <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">English</a></li>
-                <li><a class="dropdown-item" href="#" onclick="setLanguage('es')">Español</a></li>
-                <li><a class="dropdown-item" href="#" onclick="setLanguage('fr')">Français</a></li>
-            </ul>
+    <div class="row m-2 position-absolute top-0 end-0" style="z-index: 1050;">
+        <div class="col-auto">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonLanguages" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span id="btn-language">Languages</span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonLanguages">
+                    <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">English</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="setLanguage('es')">Español</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="setLanguage('fr')">Français</a></li>
+                </ul>
+            </div>
         </div>
-        <!-- Dropdown para los temas -->
-        <div>
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonThemes" data-bs-toggle="dropdown" aria-expanded="false">
-                <span id="btn-theme">Themes mode</span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonThemes">
-                <li><a class="dropdown-item" href="#" onclick="setTheme('light')">Light</a></li>
-                <li><a class="dropdown-item" href="#" onclick="setTheme('dark')">Dark</a></li>
-                <li><a class="dropdown-item" href="#" onclick="setTheme('auto')">Auto</a></li>
-            </ul>
+        <div class="col-auto">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonThemes" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span id="btn-theme">Themes mode</span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonThemes">
+                    <li><a class="dropdown-item" href="#" onclick="setTheme('light')">Light</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="setTheme('dark')">Dark</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="setTheme('auto')">Auto</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 
     <div class="container">
         <h1 class="mt-5" id="main-title">Testing Bootstrap with this page.</h1>
         <p id="main-desc">This is a simple AI page with bootstrap.</p>
-        <button type="button" class="btn btn-primary" id="main-btn">Click Me!</button>
+
+        <div class="d-inline-flex gap-1 mb-3">
+            <a class="btn btn-primary" id="btn-merienda" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Merienda</a>
+            <button class="btn btn-primary" id="btn-elemento2" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Elemento 2</button>
+            <button class="btn btn-primary" id="btn-ambos" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Ambos</button>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="collapse multi-collapse show" id="multiCollapseExample1">
+                    <div class="card card-body" style="max-height: 300px; overflow-y: auto;">
+                        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#abriendoDato" id="main-btn">Click Me!</button>
+                        <!-- Modal para boton de click me! -->
+                        <div class="modal fade" id="abriendoDato" tabindex="-1" aria-labelledby="abriendoDatoLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="abriendoDatoLabel">Preparemos este plato!</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body" style="max-height: 400px; overflow-y: auto;">
+                                        <img src="images/yogurt-banana.jpg" class="img-fluid mb-3" alt="Greek Yogurt with Banana">
+                                        <p id="modal-click-msg">¡Has hecho clic en el botón!</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn-close-modal1">Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisi nec erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                        <p>Más contenido para hacer scroll...</p>
+                        <p>Más contenido para hacer scroll...</p>
+                        <p>Más contenido para hacer scroll...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="collapse multi-collapse show" id="multiCollapseExample2">
+                    <div class="card card-body" style="max-height: 300px; overflow-y: auto;">
+                        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#miModalLargo" id="btn-open-long-modal">Abrir Modal con Contenido Largo</button>
+                        <!-- Scrollable modal -->
+                        <div class="modal fade" id="miModalLargo" tabindex="-1" aria-labelledby="miModalLargoLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="miModalLargoLabel">Título del Modal</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Contenido del modal...</p>
+                                        <p>Contenido del modal...</p>
+                                        <p>Contenido del modal...</p>
+                                        <p>Contenido del modal...</p>
+                                        <p>Contenido del modal...</p>
+                                        <p>Contenido del modal...</p>
+                                        <p>Contenido del modal...</p>
+                                        <p>Contenido del modal...</p>
+                                        <p>Contenido del modal...</p>
+                                        <p>Contenido del modal...</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn-close-modal2">Cerrar</button>
+                                        <button type="button" class="btn btn-primary" id="btn-save-changes">Guardar cambios</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Texto de ejemplo para el segundo collapse...</p>
+                        <p>Más contenido para hacer scroll...</p>
+                        <p>Más contenido para hacer scroll...</p>
+                        <p>Más contenido para hacer scroll...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
-        // Traducciones
+        // Traducciones completas
         const translations = {
             en: {
                 language: "Languages",
                 theme: "Themes mode",
                 title: "Testing Bootstrap with this page.",
                 desc: "This is a simple AI page with bootstrap.",
-                btn: "Click Me!"
+                btn: "Click Me!",
+                merienda: "Snack",
+                elemento2: "Element 2",
+                ambos: "Both",
+                modal1title: "Let's prepare this dish!",
+                modal1msg: "You clicked the button!",
+                close: "Close",
+                openLongModal: "Open Modal with Long Content",
+                modal2title: "Modal Title",
+                save: "Save changes",
+                modal2content: "Modal content..."
             },
             es: {
                 language: "Idiomas",
                 theme: "Modo de tema",
                 title: "Probando Bootstrap con esta página.",
                 desc: "Esta es una página simple de IA con bootstrap.",
-                btn: "¡Haz clic!"
+                btn: "¡Haz clic!",
+                merienda: "Merienda",
+                elemento2: "Elemento 2",
+                ambos: "Ambos",
+                modal1title: "¡Preparemos este plato!",
+                modal1msg: "¡Has hecho clic en el botón!",
+                close: "Cerrar",
+                openLongModal: "Abrir Modal con Contenido Largo",
+                modal2title: "Título del Modal",
+                save: "Guardar cambios",
+                modal2content: "Contenido del modal..."
             },
             fr: {
                 language: "Langues",
                 theme: "Mode thème",
                 title: "Tester Bootstrap avec cette page.",
                 desc: "Ceci est une page IA simple avec bootstrap.",
-                btn: "Cliquez-moi!"
+                btn: "Cliquez-moi!",
+                merienda: "Goûter",
+                elemento2: "Élément 2",
+                ambos: "Les deux",
+                modal1title: "Préparons ce plat!",
+                modal1msg: "Vous avez cliqué sur le bouton!",
+                close: "Fermer",
+                openLongModal: "Ouvrir le modal avec contenu long",
+                modal2title: "Titre du Modal",
+                save: "Enregistrer les modifications",
+                modal2content: "Contenu du modal..."
             }
         };
 
@@ -76,6 +182,26 @@
             document.getElementById('main-title').textContent = translations[lang].title;
             document.getElementById('main-desc').textContent = translations[lang].desc;
             document.getElementById('main-btn').textContent = translations[lang].btn;
+            document.getElementById('btn-merienda').textContent = translations[lang].merienda;
+            document.getElementById('btn-elemento2').textContent = translations[lang].elemento2;
+            document.getElementById('btn-ambos').textContent = translations[lang].ambos;
+            document.getElementById('abriendoDatoLabel').textContent = translations[lang].modal1title;
+            document.getElementById('modal-click-msg').textContent = translations[lang].modal1msg;
+            document.getElementById('btn-close-modal1').textContent = translations[lang].close;
+            document.getElementById('btn-open-long-modal').textContent = translations[lang].openLongModal;
+            document.getElementById('miModalLargoLabel').textContent = translations[lang].modal2title;
+            document.getElementById('btn-close-modal2').textContent = translations[lang].close;
+            document.getElementById('btn-save-changes').textContent = translations[lang].save;
+            // Cambiar contenido del modal largo
+            let modalBody = document.querySelector("#miModalLargo .modal-body");
+            if (modalBody) {
+                modalBody.innerHTML = "";
+                for (let i = 0; i < 10; i++) {
+                    let p = document.createElement("p");
+                    p.textContent = translations[lang].modal2content;
+                    modalBody.appendChild(p);
+                }
+            }
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
